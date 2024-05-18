@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class Home {
 
-//    @GetMapping
-//    public String home() {
-//        return "Default page";
-//    }
+    @GetMapping
+    public String home() {
+        return "Default page";
+    }
 //    @GetMapping("/s")
 //    public ResponseEntity<JSONObject> home2() {
 //        return "Default page";

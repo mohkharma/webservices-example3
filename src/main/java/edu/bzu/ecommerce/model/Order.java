@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,8 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Transient
+    private Double total;
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dateCreated;
 
@@ -28,6 +30,13 @@ public class Order {
     @OneToMany(mappedBy = "pk.order")
     @Valid
     private List<OrderProduct> orderProducts = new ArrayList<>();
+
+    public Double getTotal() {
+        return 0.0;
+    }
+
+    public void setTotal() {
+    }
 
     @Transient
     public Double getTotalOrderPrice() {

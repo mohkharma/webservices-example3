@@ -8,6 +8,14 @@ import jakarta.validation.constraints.NotNull;
 @Entity
 public class OrderProduct {
 
+    /**
+     * The @EmbeddedId denotes a composite primary key that is
+     * an embeddable class. The composite primary key is the
+     * combination of database table columns that behave jointly
+     * as primary key. We need to create a @Embeddable class
+     * whose properties
+     * correspond to composite primary key of the database table.
+     */
     @EmbeddedId
     @JsonIgnore
     private OrderProductPK pk;
