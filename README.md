@@ -28,6 +28,10 @@ docker stop example3
 
 #Remove the container
 docker rm example3
+
+docker image tag  example3:v1 mkharma/example3:latest
+
+docker image push mkharma/example3:latest
 ```
 
 
