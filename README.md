@@ -18,9 +18,15 @@ cd webservices-example3
 docker build -t example3:v1 .
 
 # Run the Docker container, this command maps port 8080 on your host machine to port 8080 in the container, to allow accessing the application using http://localhost:8080.
-docker run -it -p8080:8080 example3:v1
+docker run -it --detach --name example3 -p8080:8080 example3:v1
 
 # Clean the project
 ./mvnw clean
+
+#Stop the container
+docker stop example3
+
+#Remove the container
+docker rm example3
 ```
 
